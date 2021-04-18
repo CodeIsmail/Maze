@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="20B29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Option" representedClassName="Option" syncable="YES" codeGenerationType="class">
+        <attribute name="optionA" optional="YES" attributeType="String"/>
+        <attribute name="optionB" optional="YES" attributeType="String"/>
+        <attribute name="optionC" optional="YES" attributeType="String"/>
+        <attribute name="optionD" optional="YES" attributeType="String"/>
+        <relationship name="question" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="option" inverseEntity="Question"/>
+    </entity>
+    <entity name="Question" representedClassName="Question" syncable="YES" codeGenerationType="class">
+        <attribute name="answer" optional="YES" attributeType="String"/>
+        <attribute name="examType" optional="YES" attributeType="String"/>
+        <attribute name="examYear" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String"/>
+        <attribute name="quesiton" optional="YES" attributeType="String"/>
+        <attribute name="section" optional="YES" attributeType="String"/>
+        <attribute name="selectedAnswer" optional="YES" attributeType="String"/>
+        <relationship name="option" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Option" inverseName="question" inverseEntity="Option"/>
+    </entity>
+    <elements>
+        <element name="Option" positionX="201.2647705078125" positionY="-14.67092895507812" width="128" height="104"/>
+        <element name="Question" positionX="-63" positionY="-18" width="128" height="164"/>
+    </elements>
+</model>
