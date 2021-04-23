@@ -50,7 +50,7 @@ class ExamPageViewController: UIPageViewController {
                 "exam": question.examType as Any,
                 "score": "\((self.totalScore/self.questions.count) * 100)%",
                 "year": question.examYear as Any,
-                "suject": UserDefaultManager.shared.getSubject()!
+                "subject": UserDefaultManager.shared.getSubject()!
             ]
             
             self.firestoreDb.collection("history").addDocument(data: examData) { (error) in
