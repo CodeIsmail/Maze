@@ -27,4 +27,6 @@ User is allowed to select one option at any time per question and selected opton
  - [Firebase Cloud Store](https://firebase.google.com/docs/firestore/quickstart#swift)
  - [Core Data](https://developer.apple.com/documentation/coredata)
  
+ ## Credit
+ - Tobi Dada (@TobiAlbert)
 
