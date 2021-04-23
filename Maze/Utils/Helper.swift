@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+//MARK: Helper class for static data
 class Helper{
     
     private static let mapper: [String: String] = ["English language":"English",
@@ -43,14 +44,18 @@ class Helper{
     }
     
     struct Color {
-        let black = UIColor(hex: "#333333FF")!
-        let borderGray = UIColor(hex: "#F2F2F2FF")!
-        let backgroundGray = UIColor(hex: "#E0E0E0FF")!
-        let green = UIColor(hex: "#64BC26FF")!
-        let red = UIColor(hex: "#EA1601FF")!
-        let backgroundGreen = UIColor(hex: "#F4FAF9FF")!
+        static let black = UIColor(hex: "#333333FF")!
+        static let borderGray = UIColor(hex: "#F2F2F2FF")!
+        static let backgroundGray = UIColor(hex: "#E0E0E0FF")!
+        static let green = UIColor(hex: "#64BC26FF")!
+        static let red = UIColor(hex: "#EA1601FF")!
+        static let backgroundGreen = UIColor(hex: "#F4FAF9FF")!
+        static let alertGreen = UIColor(hex: "#4FB5A4FF")!
+        static let alertRed = UIColor(hex: "#E79B9BFF")!
     }
 }
+
+//MARK: View Tags
 enum PickerTag:Int{
     case ExamTypePicker
     case ExamSubjectPicker

@@ -9,14 +9,18 @@ import UIKit
 import Firebase
 
 class HistoryViewController: UIViewController {
-
+    //MARK: Outlet
     @IBOutlet weak var historyTableView: UITableView!
     
+    //MARK: Properties
     var firestoreDb: Firestore!
     var examHistories:[History] = []
     
+    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Maze"
         
         firestoreDb.collection("history").getDocuments() { (querySnapshot, err) in
             if let err = err {
@@ -39,10 +43,12 @@ class HistoryViewController: UIViewController {
     }
 }
 
+//MARK: Delegate
 extension HistoryViewController: UITableViewDelegate{
     
 }
 
+//MARK: DataSource
 extension HistoryViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         examHistories.count
@@ -57,7 +63,7 @@ extension HistoryViewController: UITableViewDataSource{
         cell.subjectLabel.text = history.subject
         cell.scoreLabel.text = history.score
         cell.examTypeLabel.text = history.examType
-        cell.creationDateLabel.text = history.year
+        cell.examYearLabel.text = history.year
         
         return cell
     }

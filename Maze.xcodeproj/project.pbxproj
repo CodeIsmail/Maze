@@ -33,6 +33,13 @@
 		11A8C8E32627A85A0035E78F /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A8C8E22627A85A0035E78F /* ApiClient.swift */; };
 		11B8B7FD26270D150025C191 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B8B7FC26270D150025C191 /* RootViewController.swift */; };
 		11B8B800262711A30025C191 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B8B7FF262711A30025C191 /* History.swift */; };
+		11C5D28C262F82F200A6756C /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C5D28B262F82F200A6756C /* Alert.storyboard */; };
+		11C5D28F262F835C00A6756C /* AlertUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C5D28E262F835C00A6756C /* AlertUIViewController.swift */; };
+		11C5D293262F897300A6756C /* ApercuPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 11C5D292262F897300A6756C /* ApercuPro-Light.ttf */; };
+		11C5D296262F8BE600A6756C /* ApercuPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 11C5D295262F8BE600A6756C /* ApercuPro-Medium.ttf */; };
+		11C5D299262F964800A6756C /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C5D298262F964800A6756C /* AlertService.swift */; };
+		11F51068263272D400D0E4A3 /* ViewController+UIAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F51067263272D400D0E4A3 /* ViewController+UIAlert.swift */; };
+		11F5106B263280B800D0E4A3 /* ControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F5106A263280B800D0E4A3 /* ControllerHelper.swift */; };
 		4025449DA050EA7404796CB7 /* Pods_Maze.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C836E832899E8D42C2A87E /* Pods_Maze.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +72,13 @@
 		11A8C8E22627A85A0035E78F /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		11B8B7FC26270D150025C191 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		11B8B7FF262711A30025C191 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		11C5D28B262F82F200A6756C /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
+		11C5D28E262F835C00A6756C /* AlertUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUIViewController.swift; sourceTree = "<group>"; };
+		11C5D292262F897300A6756C /* ApercuPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ApercuPro-Light.ttf"; sourceTree = "<group>"; };
+		11C5D295262F8BE600A6756C /* ApercuPro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ApercuPro-Medium.ttf"; sourceTree = "<group>"; };
+		11C5D298262F964800A6756C /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		11F51067263272D400D0E4A3 /* ViewController+UIAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+UIAlert.swift"; sourceTree = "<group>"; };
+		11F5106A263280B800D0E4A3 /* ControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerHelper.swift; sourceTree = "<group>"; };
 		D63983ACA67BBF8E28F55DCA /* Pods-Maze.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maze.release.xcconfig"; path = "Target Support Files/Pods-Maze/Pods-Maze.release.xcconfig"; sourceTree = "<group>"; };
 		E9C836E832899E8D42C2A87E /* Pods_Maze.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maze.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA520A0DADDA09FBD923152 /* Pods-Maze.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maze.debug.xcconfig"; path = "Target Support Files/Pods-Maze/Pods-Maze.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +99,8 @@
 		11400C902626FF1100A4FA23 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				11C5D295262F8BE600A6756C /* ApercuPro-Medium.ttf */,
+				11C5D292262F897300A6756C /* ApercuPro-Light.ttf */,
 				111C74AE262B12060092AFBE /* ApercuPro-Bold.ttf */,
 				11400C912626FFA800A4FA23 /* ApercuPro-Regular.ttf */,
 			);
@@ -149,6 +165,7 @@
 			children = (
 				117BF7502620FCC400854AAF /* Main.storyboard */,
 				117BF7552620FCC900854AAF /* LaunchScreen.storyboard */,
+				11C5D28B262F82F200A6756C /* Alert.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -182,6 +199,8 @@
 				117BF7A62623BEA000854AAF /* ExamPageViewController.swift */,
 				116F146A2626502F00D4D64B /* HistoryTableViewCell.swift */,
 				11B8B7FC26270D150025C191 /* RootViewController.swift */,
+				11C5D28E262F835C00A6756C /* AlertUIViewController.swift */,
+				11F51067263272D400D0E4A3 /* ViewController+UIAlert.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -210,6 +229,8 @@
 				1150E38F2626B50B00E45033 /* Helper.swift */,
 				117C9125262BF9B1007D6E1D /* UserDefaultManager.swift */,
 				118370BF262C5A0600D45D01 /* Extension.swift */,
+				11C5D298262F964800A6756C /* AlertService.swift */,
+				11F5106A263280B800D0E4A3 /* ControllerHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -243,6 +264,7 @@
 				117BF7442620FCC400854AAF /* Frameworks */,
 				117BF7452620FCC400854AAF /* Resources */,
 				CF1654DEDE4688F373BB2370 /* [CP] Embed Pods Frameworks */,
+				F6AB40F1D5B8C2D9F8C34DD0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -295,7 +317,10 @@
 				117BF76C2622446000854AAF /* GoogleService-Info.plist in Resources */,
 				11400C922626FFA800A4FA23 /* ApercuPro-Regular.ttf in Resources */,
 				117BF7542620FCC900854AAF /* Assets.xcassets in Resources */,
+				11C5D293262F897300A6756C /* ApercuPro-Light.ttf in Resources */,
 				117BF7522620FCC400854AAF /* Main.storyboard in Resources */,
+				11C5D28C262F82F200A6756C /* Alert.storyboard in Resources */,
+				11C5D296262F8BE600A6756C /* ApercuPro-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +342,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Maze/Pods-Maze-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6AB40F1D5B8C2D9F8C34DD0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Maze/Pods-Maze-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Maze/Pods-Maze-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Maze/Pods-Maze-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FB8E17DE7C20A34E97A604B0 /* [CP] Check Pods Manifest.lock */ = {
@@ -348,8 +390,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11C5D299262F964800A6756C /* AlertService.swift in Sources */,
 				1178674E2624FD06001E8496 /* Exam.xcdatamodeld in Sources */,
 				117BF76426223E7B00854AAF /* QuestionResponse.swift in Sources */,
+				11C5D28F262F835C00A6756C /* AlertUIViewController.swift in Sources */,
 				117BF74F2620FCC400854AAF /* SelectExamViewController.swift in Sources */,
 				11A8C8E32627A85A0035E78F /* ApiClient.swift in Sources */,
 				117BF74B2620FCC400854AAF /* AppDelegate.swift in Sources */,
@@ -358,6 +402,7 @@
 				117BF7A72623BEA000854AAF /* ExamPageViewController.swift in Sources */,
 				116F146B2626502F00D4D64B /* HistoryTableViewCell.swift in Sources */,
 				117BF7A32623B36900854AAF /* AnswerViewController.swift in Sources */,
+				11F51068263272D400D0E4A3 /* ViewController+UIAlert.swift in Sources */,
 				117BF79D2623B2F900854AAF /* HistoryViewController.swift in Sources */,
 				11B8B800262711A30025C191 /* History.swift in Sources */,
 				1178675426250349001E8496 /* DataController.swift in Sources */,
@@ -366,6 +411,7 @@
 				118370C0262C5A0600D45D01 /* Extension.swift in Sources */,
 				11B8B7FD26270D150025C191 /* RootViewController.swift in Sources */,
 				1150E3902626B50B00E45033 /* Helper.swift in Sources */,
+				11F5106B263280B800D0E4A3 /* ControllerHelper.swift in Sources */,
 				117BF79A2623AD6700854AAF /* LoginViewController.swift in Sources */,
 				117BF74D2620FCC400854AAF /* SceneDelegate.swift in Sources */,
 			);

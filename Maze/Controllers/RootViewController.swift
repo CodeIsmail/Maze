@@ -22,6 +22,7 @@ class RootViewController: UITabBarController, UITabBarControllerDelegate {
     fileprivate func defaultConfiguration(_ selectedNavigationController: UINavigationController) {
         if let selectExamViewController = selectedNavigationController.topViewController as? SelectExamViewController{
             selectExamViewController.dataController = dataController
+            selectExamViewController.firestoreDb = firestoreDb
         }
     }
     

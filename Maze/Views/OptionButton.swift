@@ -10,9 +10,10 @@ import SnapKit
 
 final class OptionButton: UIButton {
 
+    //MARK: Properties
     private let optionLabel: UILabel = {
         let label = UILabel()
-        label.textColor  = Helper.Color.init().black
+        label.textColor  = Helper.Color.black
         label.font = UIFont(name: "ApercuPro-Bold", size: 14)
         
         label.textAlignment = .center
@@ -20,14 +21,14 @@ final class OptionButton: UIButton {
     }()
     private let optionAnswerLabel: UILabel = {
         let label = UILabel()
-        label.textColor  = Helper.Color.init().black
+        label.textColor  = Helper.Color.black
         label.font = UIFont(name: "ApercuPro-Bold", size: 14)
         label.textAlignment = .center
         return label
     }()
     private let optionBackgroundView: UIView = {
         let view  = UIView()
-        view.backgroundColor = Helper.Color.init().backgroundGray
+        view.backgroundColor = Helper.Color.backgroundGray
         view.layer.cornerRadius = 16
         view.clipsToBounds = true
         return view
@@ -39,6 +40,7 @@ final class OptionButton: UIButton {
         return imageView
     }()
     
+    //MARK: Override Functions
     override init(frame: CGRect) {
         super.init(frame: frame)
         optionBackgroundView.addSubview(optionLabel)
@@ -48,7 +50,7 @@ final class OptionButton: UIButton {
         clipsToBounds = true
         layer.cornerRadius = 8
         layer.borderWidth = 1
-        layer.borderColor = Helper.Color.init().borderGray.cgColor
+        layer.borderColor = Helper.Color.borderGray.cgColor
         backgroundColor = .white
     }
     
@@ -56,10 +58,6 @@ final class OptionButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with optionViewModel: OptionViewModel){
-        optionLabel.text = optionViewModel.option
-        optionAnswerLabel.text = optionViewModel.optionAnswer
-    }
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -83,6 +81,11 @@ final class OptionButton: UIButton {
         }
     }
     
+    //MARK: Util functions
+    func configure(with optionViewModel: OptionViewModel){
+        optionLabel.text = optionViewModel.option
+        optionAnswerLabel.text = optionViewModel.optionAnswer
+    }
     
     func setOptionBackgroundViewColor(with color: UIColor){
         optionBackgroundView.backgroundColor = color
@@ -102,8 +105,8 @@ final class OptionButton: UIButton {
         selectedOptionImageView.image = nil
         setSelectedOptionVisibility(isVisible: false)
         optionBackgroundView.backgroundColor =
-            Helper.Color.init().backgroundGray
-        layer.borderColor = Helper.Color.init().borderGray.cgColor
-        optionLabel.textColor = Helper.Color.init().black
+            Helper.Color.backgroundGray
+        layer.borderColor = Helper.Color.borderGray.cgColor
+        optionLabel.textColor = Helper.Color.black
     }
 }

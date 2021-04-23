@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3TI-Rz-bsi">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ApercuPro-Bold.ttf">
+            <string>ApercuPro-Bold</string>
+        </array>
+        <array key="ApercuPro-Light.ttf">
+            <string>ApercuPro-Light</string>
+        </array>
+        <array key="ApercuPro-Medium.ttf">
+            <string>ApercuPro-Medium</string>
+        </array>
+        <array key="ApercuPro-Regular.ttf">
+            <string>ApercuPro-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--AlertUI View Controller-->
+        <scene sceneID="D7b-db-2xz">
+            <objects>
+                <viewController storyboardIdentifier="AlertVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="3TI-Rz-bsi" customClass="AlertUIViewController" customModule="Maze" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cmo-Hw-uPd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d13-Ub-bwT">
+                                <rect key="frame" x="28" y="174.5" width="358" height="557.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ucS-hb-ev1">
+                                        <rect key="frame" x="124" y="50" width="110" height="90"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="110" id="KZE-bU-ldp"/>
+                                            <constraint firstAttribute="height" constant="90" id="W1l-aE-xFf"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsK-4L-fh9">
+                                        <rect key="frame" x="20" y="178" width="318" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="vBo-CV-9IS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ApercuPro-Bold" family="Apercu Pro" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcq-hQ-4nD">
+                                        <rect key="frame" x="20" y="223" width="318" height="19"/>
+                                        <fontDescription key="fontDescription" name="ApercuPro-Regular" family="Apercu Pro" pointSize="16"/>
+                                        <color key="textColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrs-7U-hw6">
+                                        <rect key="frame" x="20" y="272" width="318" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="ApercuPro-Light" family="Apercu Pro" pointSize="14"/>
+                                        <color key="textColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNq-zW-YOQ">
+                                        <rect key="frame" x="20" y="308.5" width="318" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="0Xm-qx-gax"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ApercuPro-Bold" family="Apercu Pro" pointSize="40"/>
+                                        <color key="textColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="YXd-bJ-nGT">
+                                        <rect key="frame" x="20" y="388.5" width="318" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="1" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scl-QZ-pCU">
+                                                <rect key="frame" x="0.0" y="0.0" width="151" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="6XE-AL-V2l"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ApercuPro-Medium" family="Apercu Pro" pointSize="14"/>
+                                                <state key="normal" title="View Answer Sheet"/>
+                                                <connections>
+                                                    <action selector="actionViewAnswerSheet:" destination="3TI-Rz-bsi" eventType="touchUpInside" id="gNH-k5-N4w"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="2" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbh-OL-rO1">
+                                                <rect key="frame" x="167" y="0.0" width="151" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Njq-kv-Wrq"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ApercuPro-Medium" family="Apercu Pro" pointSize="14"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="actionRestart:" destination="3TI-Rz-bsi" eventType="touchUpInside" id="F4T-59-c1b"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="3" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mga-Rd-Jew">
+                                        <rect key="frame" x="20" y="478.5" width="318" height="29"/>
+                                        <fontDescription key="fontDescription" name="ApercuPro-Medium" family="Apercu Pro" pointSize="14"/>
+                                        <state key="normal" title="Home">
+                                            <color key="titleColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="actionHome:" destination="3TI-Rz-bsi" eventType="touchUpInside" id="ur2-yi-XsH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Mga-Rd-Jew" firstAttribute="leading" secondItem="d13-Ub-bwT" secondAttribute="leading" constant="20" id="0V2-gy-Zu7"/>
+                                    <constraint firstItem="dsK-4L-fh9" firstAttribute="centerX" secondItem="d13-Ub-bwT" secondAttribute="centerX" id="0kM-fT-8hS"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="708" id="4FE-hn-EDl"/>
+                                    <constraint firstItem="hrs-7U-hw6" firstAttribute="top" secondItem="tcq-hQ-4nD" secondAttribute="bottom" constant="30" id="57Z-t6-ckS"/>
+                                    <constraint firstAttribute="trailing" secondItem="YXd-bJ-nGT" secondAttribute="trailing" constant="20" id="82Z-0A-RJT"/>
+                                    <constraint firstAttribute="trailing" secondItem="nNq-zW-YOQ" secondAttribute="trailing" constant="20" id="8tK-2V-aFD"/>
+                                    <constraint firstAttribute="bottom" secondItem="Mga-Rd-Jew" secondAttribute="bottom" constant="50" id="CjI-Zz-GsB"/>
+                                    <constraint firstItem="dsK-4L-fh9" firstAttribute="leading" secondItem="d13-Ub-bwT" secondAttribute="leading" constant="20" id="FSu-Zd-ob9"/>
+                                    <constraint firstItem="Mga-Rd-Jew" firstAttribute="top" secondItem="YXd-bJ-nGT" secondAttribute="bottom" constant="40" id="HeH-ig-y3f"/>
+                                    <constraint firstItem="ucS-hb-ev1" firstAttribute="top" secondItem="d13-Ub-bwT" secondAttribute="top" constant="50" id="K2V-kl-XsV"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mga-Rd-Jew" secondAttribute="trailing" constant="20" id="Mo1-z6-V8O"/>
+                                    <constraint firstItem="nNq-zW-YOQ" firstAttribute="top" secondItem="hrs-7U-hw6" secondAttribute="bottom" constant="20" id="NJg-x4-QbR"/>
+                                    <constraint firstItem="ucS-hb-ev1" firstAttribute="centerX" secondItem="d13-Ub-bwT" secondAttribute="centerX" id="NzE-OC-iKw"/>
+                                    <constraint firstAttribute="trailing" secondItem="tcq-hQ-4nD" secondAttribute="trailing" constant="20" id="Qob-yX-61G"/>
+                                    <constraint firstItem="dsK-4L-fh9" firstAttribute="top" secondItem="ucS-hb-ev1" secondAttribute="bottom" constant="38" id="UwO-Rt-pR4"/>
+                                    <constraint firstItem="YXd-bJ-nGT" firstAttribute="top" secondItem="nNq-zW-YOQ" secondAttribute="bottom" constant="30" id="WJg-ub-cuf"/>
+                                    <constraint firstItem="YXd-bJ-nGT" firstAttribute="leading" secondItem="d13-Ub-bwT" secondAttribute="leading" constant="20" id="ale-kZ-pGd"/>
+                                    <constraint firstItem="tcq-hQ-4nD" firstAttribute="top" secondItem="dsK-4L-fh9" secondAttribute="bottom" constant="20" id="bbv-xU-qFb"/>
+                                    <constraint firstAttribute="trailing" secondItem="hrs-7U-hw6" secondAttribute="trailing" constant="20" id="dBc-Ht-2wW"/>
+                                    <constraint firstItem="tcq-hQ-4nD" firstAttribute="leading" secondItem="d13-Ub-bwT" secondAttribute="leading" constant="20" id="gjV-yb-XKw"/>
+                                    <constraint firstItem="nNq-zW-YOQ" firstAttribute="leading" secondItem="d13-Ub-bwT" secondAttribute="leading" constant="20" id="j4b-f3-9ka"/>
+                                    <constraint firstAttribute="trailing" secondItem="dsK-4L-fh9" secondAttribute="trailing" constant="20" id="sOI-fS-j4O"/>
+                                    <constraint firstItem="hrs-7U-hw6" firstAttribute="leading" secondItem="d13-Ub-bwT" secondAttribute="leading" constant="20" id="zQz-CS-NzP"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PYm-1U-sGb"/>
+                        <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="d13-Ub-bwT" firstAttribute="centerX" secondItem="PYm-1U-sGb" secondAttribute="centerX" id="H0v-dY-Sa3"/>
+                            <constraint firstItem="d13-Ub-bwT" firstAttribute="centerY" secondItem="PYm-1U-sGb" secondAttribute="centerY" id="gPP-fT-uD4"/>
+                            <constraint firstItem="PYm-1U-sGb" firstAttribute="trailing" secondItem="d13-Ub-bwT" secondAttribute="trailing" constant="28" id="gPb-zF-ehz"/>
+                            <constraint firstItem="d13-Ub-bwT" firstAttribute="leading" secondItem="PYm-1U-sGb" secondAttribute="leading" constant="28" id="my5-pV-aYS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="answerSheetButton" destination="scl-QZ-pCU" id="veF-Q4-Yjc"/>
+                        <outlet property="messageLabel" destination="tcq-hQ-4nD" id="a3T-13-mK6"/>
+                        <outlet property="moodLabel" destination="dsK-4L-fh9" id="Xgf-d9-Ddv"/>
+                        <outlet property="restartButton" destination="Dbh-OL-rO1" id="GJr-ov-8Qc"/>
+                        <outlet property="scoreLabel" destination="nNq-zW-YOQ" id="IVZ-Ll-1R6"/>
+                        <outlet property="smileyImageView" destination="ucS-hb-ev1" id="F9S-tR-LPT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0km-gS-7Pm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="73" y="70"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

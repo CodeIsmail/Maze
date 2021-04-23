@@ -9,6 +9,9 @@ import Foundation
 
 class ApiClient{
     
+    struct ApiData {
+        static var subject = ""
+    }
     enum Endpoint {
         
         static let BaseUrl = "https://questions.aloc.ng/api/q/20?"
@@ -29,6 +32,7 @@ class ApiClient{
     }
     
     static func taskRequestExamQuestions(examType: String, subject: String, year: String, completion: @escaping (([ExamQuestion], Error?)->Void)) {
+        ApiData.subject = subject;
         let task = URLSession.shared.dataTask(with: Endpoint.requestExamQuestion(examType, subject, year).url){
             data, response, error in
             guard let data = data else {

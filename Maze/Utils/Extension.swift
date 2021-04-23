@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+//MARK: Hex Color converter
 extension UIColor {
     public convenience init?(hex: String) {
         let r, g, b, a: CGFloat

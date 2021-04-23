@@ -10,9 +10,10 @@ import SnapKit
 
 class ExamViewController: UIViewController {
     
+    //MARK: Views
     var backgroundView: UIView = {
         let view = UIView()
-        view.backgroundColor = Helper.Color.init().backgroundGreen
+        view.backgroundColor = Helper.Color.backgroundGreen
         return view
     }()
     var questionImageView: UIImageView = {
@@ -22,7 +23,7 @@ class ExamViewController: UIViewController {
     }()
     var questionLabel: UILabel = {
         let label = UILabel()
-        label.textColor  = UIColor(hex: "#333333FF")
+        label.textColor  = Helper.Color.black
         label.font = UIFont(name: "ApercuPro-Regular", size: 16)
         label.numberOfLines = 5
         return label
@@ -48,26 +49,105 @@ class ExamViewController: UIViewController {
         return optionButton
     }()
     
+    //MARK: Properties
     let currentQuestion: Question!
     let dataController: DataController!
     
+    //MARK: init
     init(with question: Question, dataController: DataController){
         self.currentQuestion = question
         self.dataController = dataController
         super.init(nibName: nil, bundle: nil)
     }
-    
+    //MARK: init
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .white
         
-        //
-        setupQuestionViews()
+        bindViews()
         
+        setupViewsToParent()
+        
+        setViewContraints()
+        
+        //MARK: Targets
+        optionAButton.addTarget(self, action: #selector(selectedOption(_:)), for: .touchUpInside)
+        optionBButton.addTarget(self, action: #selector(selectedOption(_:)), for: .touchUpInside)
+        optionCButton.addTarget(self, action: #selector(selectedOption(_:)), for: .touchUpInside)
+        optionDButton.addTarget(self, action: #selector(selectedOption(_:)), for: .touchUpInside)
+    }
+    
+    //MARK: Util Functions
+    @objc func selectedOption(_ sender: OptionButton){
+        if let tag = OptionButtonTag(rawValue: sender.tag){
+            switch tag {
+            case OptionButtonTag.OptionA:
+                let isCorrect = self.validateSelectedAnswer(selectedAnswer: "a")
+                //Reset other buttons
+                optionBButton.resetButtonState()
+                optionCButton.resetButtonState()
+                optionDButton.resetButtonState()
+                
+                //disable other buttons
+                optionBButton.isEnabled = false
+                optionCButton.isEnabled = false
+                optionDButton.isEnabled = false
+                
+                updateSelectedView(sender, isCorrect)
+                
+            case OptionButtonTag.OptionB:
+                let isCorrect = self.validateSelectedAnswer(selectedAnswer: "b")
+                //Reset other buttons
+                optionAButton.resetButtonState()
+                optionCButton.resetButtonState()
+                optionDButton.resetButtonState()
+                
+                //disable other buttons
+                optionAButton.isEnabled = false
+                optionCButton.isEnabled = false
+                optionDButton.isEnabled = false
+                
+                updateSelectedView(sender, isCorrect)
+                
+            case OptionButtonTag.OptionC:
+                let isCorrect = self.validateSelectedAnswer(selectedAnswer: "c")
+                //Reset other buttons
+                optionAButton.resetButtonState()
+                optionBButton.resetButtonState()
+                optionDButton.resetButtonState()
+                
+                //disable other buttons
+                optionAButton.isEnabled = false
+                optionBButton.isEnabled = false
+                optionDButton.isEnabled = false
+                
+                updateSelectedView(sender, isCorrect)
+                
+            case OptionButtonTag.OptionD:
+                let isCorrect = self.validateSelectedAnswer(selectedAnswer: "d")
+                //Reset other buttons
+                optionAButton.resetButtonState()
+                optionBButton.resetButtonState()
+                optionCButton.resetButtonState()
+                
+                //disable other buttons
+                optionAButton.isEnabled = false
+                optionBButton.isEnabled = false
+                optionCButton.isEnabled = false
+                
+                updateSelectedView(sender, isCorrect)
+            }
+            
+        }
+    }
+    
+    private func setupViewsToParent() {
         backgroundView.addSubview(questionImageView)
         backgroundView.addSubview(questionLabel)
         backgroundView.addSubview(optionAButton)
@@ -75,78 +155,21 @@ class ExamViewController: UIViewController {
         backgroundView.addSubview(optionCButton)
         backgroundView.addSubview(optionDButton)
         view.addSubview(backgroundView)
-        setViewContraints()
-        
-        optionAButton.addTarget(self, action: #selector(selectedOption(_:)), for: .touchUpInside)
-        optionBButton.addTarget(self, action: #selector(selectedOption(_:)), for: .touchUpInside)
-        optionCButton.addTarget(self, action: #selector(selectedOption(_:)), for: .touchUpInside)
-        optionDButton.addTarget(self, action: #selector(selectedOption(_:)), for: .touchUpInside)
     }
     
-    @objc func selectedOption(_ sender: OptionButton){
-        if let tag = OptionButtonTag(rawValue: sender.tag){
-            switch tag {
-            case OptionButtonTag.OptionA:
-                let isCorrect = self.validateSelectedAnswer(selectedAnswer: "a")
-                sender.setSelectedOptionVisibility(isVisible: false)
-                optionBButton.resetButtonState()
-                optionCButton.resetButtonState()
-                optionDButton.resetButtonState()
-                if isCorrect {
-                    sender.setOptionBackgroundViewColor(with: Helper.Color.init().green)
-                    sender.setSelectedOptionImage(with: UIImage(named: "correct")!)
-                }else{
-                    sender.setOptionBackgroundViewColor(with: Helper.Color.init().red)
-                    sender.setSelectedOptionImage(with: UIImage(named: "wrong")!)
-                }
-            case OptionButtonTag.OptionB:
-                let isCorrect = self.validateSelectedAnswer(selectedAnswer: "b")
-            
-                sender.setSelectedOptionVisibility(isVisible: false)
-                optionAButton.resetButtonState()
-                optionCButton.resetButtonState()
-                optionDButton.resetButtonState()
-                if isCorrect {
-                    sender.setOptionBackgroundViewColor(with: Helper.Color.init().green)
-                    sender.setSelectedOptionImage(with: UIImage(named: "correct")!)
-                }else{
-                    sender.setOptionBackgroundViewColor(with: Helper.Color.init().red)
-                    sender.setSelectedOptionImage(with: UIImage(named: "wrong")!)
-                }
-            case OptionButtonTag.OptionC:
-                let isCorrect = self.validateSelectedAnswer(selectedAnswer: "c")
-                
-                sender.setSelectedOptionVisibility(isVisible: false)
-                optionAButton.resetButtonState()
-                optionBButton.resetButtonState()
-                optionDButton.resetButtonState()
-                if isCorrect {
-                    
-                    sender.setOptionBackgroundViewColor(with: Helper.Color.init().green)
-                    sender.setSelectedOptionImage(with: UIImage(named: "correct")!)
-                }else{
-                    sender.setOptionBackgroundViewColor(with: Helper.Color.init().red)
-                    sender.setSelectedOptionImage(with: UIImage(named: "wrong")!)
-                }
-            case OptionButtonTag.OptionD:
-                let isCorrect = self.validateSelectedAnswer(selectedAnswer: "d")
-                sender.setSelectedOptionVisibility(isVisible: false)
-                optionAButton.resetButtonState()
-                optionBButton.resetButtonState()
-                optionCButton.resetButtonState()
-                if isCorrect {
-                    sender.setOptionBackgroundViewColor(with: Helper.Color.init().green)
-                    sender.setSelectedOptionImage(with: UIImage(named: "correct")!)
-                }else{
-                    sender.setOptionBackgroundViewColor(with: Helper.Color.init().red)
-                    sender.setSelectedOptionImage(with: UIImage(named: "wrong")!)
-                }
-            }
-            
+    private func updateSelectedView(_ sender: OptionButton, _ isCorrect: Bool) {
+        sender.setSelectedOptionVisibility(isVisible: false)
+        if isCorrect {
+            sender.setOptionBackgroundViewColor(with: Helper.Color.green)
+            sender.setSelectedOptionImage(with: UIImage(named: "correct")!)
+        }else{
+            sender.setOptionBackgroundViewColor(with: Helper.Color.red)
+            sender.setSelectedOptionImage(with: UIImage(named: "wrong")!)
         }
     }
     
     private func validateSelectedAnswer(selectedAnswer: String) -> Bool{
+        saveSelectedAnswer(as: selectedAnswer)
         if selectedAnswer == currentQuestion.answer!{
             return true
         }else{
@@ -154,8 +177,13 @@ class ExamViewController: UIViewController {
         }
     }
     
-    private func setViewContraints(){
+    private func saveSelectedAnswer(as selectedAnswer: String) {
+        currentQuestion.selectedAnswer = selectedAnswer
         
+        try? dataController.viewContext.save()
+    }
+    
+    private func setViewContraints(){
         backgroundView.snp.makeConstraints { (make) in
             if #available(iOS 11.0, *) {
                 make.edges.equalTo(view.safeAreaLayoutGuide.snp.margins).inset(16)
@@ -199,7 +227,34 @@ class ExamViewController: UIViewController {
         }
         
     }
-    private func setupQuestionViews(){
+    
+    private func setInitialViewState() {
+        if let selectedAnswer = currentQuestion.selectedAnswer, !selectedAnswer.isEmpty {
+            if selectedAnswer == "a" {
+                optionBButton.isEnabled = false
+                optionCButton.isEnabled = false
+                optionDButton.isEnabled = false
+                updateSelectedView(optionAButton, selectedAnswer == currentQuestion.answer)
+            }else if selectedAnswer == "b"{
+                optionAButton.isEnabled = false
+                optionCButton.isEnabled = false
+                optionDButton.isEnabled = false
+                updateSelectedView(optionBButton, selectedAnswer == currentQuestion.answer)
+            }else if selectedAnswer == "c"{
+                optionAButton.isEnabled = false
+                optionBButton.isEnabled = false
+                optionDButton.isEnabled = false
+                updateSelectedView(optionCButton, selectedAnswer == currentQuestion.answer)
+            }else if selectedAnswer == "d"{
+                optionAButton.isEnabled = false
+                optionBButton.isEnabled = false
+                optionCButton.isEnabled = false
+                updateSelectedView(optionDButton, selectedAnswer == currentQuestion.answer)
+            }
+        }
+    }
+    
+    private func bindViews(){
         //question image
         if let questionImage = currentQuestion.image {
             questionImageView.image = UIImage(data: questionImage)
@@ -237,9 +292,7 @@ class ExamViewController: UIViewController {
             optionDButton.configure(with: optionDViewModel)
         }
         
-        
+        setInitialViewState()
         
     }
-    
-    
 }
