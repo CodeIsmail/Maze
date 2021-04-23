@@ -18,7 +18,7 @@ extension UIViewController{
     
     func showInfoAlert(message: String, completion: @escaping ()-> Void){
         let alertView = UIAlertController(title: "Info", message: message, preferredStyle: .alert)
-        alertView.addAction(UIAlertAction(title: "Info", style: .default, handler: { (alertAction) in
+        alertView.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (alertAction) in
             completion()
         }))
         alertView.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))

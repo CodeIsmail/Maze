@@ -41,6 +41,22 @@ class HistoryViewController: UIViewController {
         }
        
     }
+    
+    @IBAction func logoutTapped(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            
+            UserDefaultManager.shared.saveUser(nil)
+            
+            let loginViewController = ControllerHelper.getLoginViewController()
+            
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(loginViewController)
+        } catch let signOutError as NSError {
+            showErrorAlert(message: "Error Signing out")
+            print ("Error signing out: %@", signOutError)
+        }
+    }
 }
 
 //MARK: Delegate

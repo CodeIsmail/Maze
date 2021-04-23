@@ -36,10 +36,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ghJ-dT-z2k" customClass="GIDSignInButton">
-                                <rect key="frame" x="87" y="442" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghJ-dT-z2k" customClass="GIDSignInButton">
+                                <rect key="frame" x="87" y="442" width="240" height="35"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="ktv-Vx-YLh"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -49,9 +51,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9jN-CK-cOb" secondAttribute="trailing" constant="20" id="99c-g0-Wcu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gku-ek-NCu" secondAttribute="trailing" constant="20" id="AVV-Nv-6iL"/>
                             <constraint firstItem="gku-ek-NCu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="R6d-0v-47M"/>
-                            <constraint firstItem="9jN-CK-cOb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="186" id="peW-qc-Qrh"/>
+                            <constraint firstItem="ghJ-dT-z2k" firstAttribute="top" secondItem="gku-ek-NCu" secondAttribute="bottom" constant="106" id="Xvh-Nf-gLW"/>
+                            <constraint firstItem="ghJ-dT-z2k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="pdx-8Y-6Lg"/>
                             <constraint firstItem="9jN-CK-cOb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="221" id="rZ9-Nu-Ymo"/>
                             <constraint firstItem="9jN-CK-cOb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xDj-7K-dcP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ghJ-dT-z2k" secondAttribute="trailing" constant="87" id="z7Z-U0-EAL"/>
                         </constraints>
                     </view>
                     <connections>
@@ -116,7 +120,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5F-iL-U9u" userLabel="creationDateLabel">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5F-iL-U9u" userLabel="examYearLabel">
                                                     <rect key="frame" x="360.5" y="33" width="33.5" height="14.5"/>
                                                     <fontDescription key="fontDescription" name="ApercuPro-Regular" family="Apercu Pro" pointSize="14"/>
                                                     <nil key="textColor"/>
@@ -139,8 +143,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="creationDateLabel" destination="u5F-iL-U9u" id="eXl-QE-Blh"/>
                                             <outlet property="examTypeLabel" destination="7LL-hK-ag3" id="87W-yN-EfJ"/>
+                                            <outlet property="examYearLabel" destination="u5F-iL-U9u" id="VaD-E2-sVR"/>
                                             <outlet property="scoreLabel" destination="sC1-RI-IrW" id="10U-mm-kwE"/>
                                             <outlet property="subjectLabel" destination="tdK-At-ABc" id="C7z-lv-b2s"/>
                                         </connections>
@@ -161,7 +165,13 @@
                             <constraint firstItem="Eoj-Uz-Nhv" firstAttribute="leading" secondItem="fi5-SS-cXc" secondAttribute="leading" id="ehV-1Y-pRH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="VRB-pR-SGe"/>
+                    <navigationItem key="navigationItem" id="VRB-pR-SGe">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="fDa-eF-c4A">
+                            <connections>
+                                <action selector="logoutTapped:" destination="Z4V-7a-c1C" id="1PB-0E-5RX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="historyTableView" destination="Eoj-Uz-Nhv" id="uO5-Nt-8oG"/>
                     </connections>
