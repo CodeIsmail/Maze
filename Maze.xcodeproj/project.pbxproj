@@ -40,6 +40,14 @@
 		11C5D299262F964800A6756C /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C5D298262F964800A6756C /* AlertService.swift */; };
 		11F51068263272D400D0E4A3 /* ViewController+UIAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F51067263272D400D0E4A3 /* ViewController+UIAlert.swift */; };
 		11F5106B263280B800D0E4A3 /* ControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F5106A263280B800D0E4A3 /* ControllerHelper.swift */; };
+		11F510762632BFDE00D0E4A3 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 11F5106E2632BFDE00D0E4A3 /* login.png */; };
+		11F510772632BFDE00D0E4A3 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 11F5106F2632BFDE00D0E4A3 /* home.png */; };
+		11F510782632BFDE00D0E4A3 /* result dialog.png in Resources */ = {isa = PBXBuildFile; fileRef = 11F510702632BFDE00D0E4A3 /* result dialog.png */; };
+		11F510792632BFDE00D0E4A3 /* question page.png in Resources */ = {isa = PBXBuildFile; fileRef = 11F510712632BFDE00D0E4A3 /* question page.png */; };
+		11F5107A2632BFDE00D0E4A3 /* question page wrong answer.png in Resources */ = {isa = PBXBuildFile; fileRef = 11F510722632BFDE00D0E4A3 /* question page wrong answer.png */; };
+		11F5107B2632BFDE00D0E4A3 /* history.png in Resources */ = {isa = PBXBuildFile; fileRef = 11F510732632BFDE00D0E4A3 /* history.png */; };
+		11F5107C2632BFDE00D0E4A3 /* question page correct answer.png in Resources */ = {isa = PBXBuildFile; fileRef = 11F510742632BFDE00D0E4A3 /* question page correct answer.png */; };
+		11F5107D2632BFDE00D0E4A3 /* Answer Sheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 11F510752632BFDE00D0E4A3 /* Answer Sheet.png */; };
 		4025449DA050EA7404796CB7 /* Pods_Maze.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C836E832899E8D42C2A87E /* Pods_Maze.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +87,14 @@
 		11C5D298262F964800A6756C /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		11F51067263272D400D0E4A3 /* ViewController+UIAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+UIAlert.swift"; sourceTree = "<group>"; };
 		11F5106A263280B800D0E4A3 /* ControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerHelper.swift; sourceTree = "<group>"; };
+		11F5106E2632BFDE00D0E4A3 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
+		11F5106F2632BFDE00D0E4A3 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		11F510702632BFDE00D0E4A3 /* result dialog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "result dialog.png"; sourceTree = "<group>"; };
+		11F510712632BFDE00D0E4A3 /* question page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "question page.png"; sourceTree = "<group>"; };
+		11F510722632BFDE00D0E4A3 /* question page wrong answer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "question page wrong answer.png"; sourceTree = "<group>"; };
+		11F510732632BFDE00D0E4A3 /* history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = history.png; sourceTree = "<group>"; };
+		11F510742632BFDE00D0E4A3 /* question page correct answer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "question page correct answer.png"; sourceTree = "<group>"; };
+		11F510752632BFDE00D0E4A3 /* Answer Sheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Answer Sheet.png"; sourceTree = "<group>"; };
 		D63983ACA67BBF8E28F55DCA /* Pods-Maze.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maze.release.xcconfig"; path = "Target Support Files/Pods-Maze/Pods-Maze.release.xcconfig"; sourceTree = "<group>"; };
 		E9C836E832899E8D42C2A87E /* Pods_Maze.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maze.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA520A0DADDA09FBD923152 /* Pods-Maze.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maze.debug.xcconfig"; path = "Target Support Files/Pods-Maze/Pods-Maze.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +144,7 @@
 		117BF73E2620FCC400854AAF = {
 			isa = PBXGroup;
 			children = (
+				11F5106D2632BFDE00D0E4A3 /* Maze pics */,
 				117BF7492620FCC400854AAF /* Maze */,
 				117BF7482620FCC400854AAF /* Products */,
 				98BAA8C06F4D928988C80AE0 /* Pods */,
@@ -235,6 +252,21 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		11F5106D2632BFDE00D0E4A3 /* Maze pics */ = {
+			isa = PBXGroup;
+			children = (
+				11F5106E2632BFDE00D0E4A3 /* login.png */,
+				11F5106F2632BFDE00D0E4A3 /* home.png */,
+				11F510702632BFDE00D0E4A3 /* result dialog.png */,
+				11F510712632BFDE00D0E4A3 /* question page.png */,
+				11F510722632BFDE00D0E4A3 /* question page wrong answer.png */,
+				11F510732632BFDE00D0E4A3 /* history.png */,
+				11F510742632BFDE00D0E4A3 /* question page correct answer.png */,
+				11F510752632BFDE00D0E4A3 /* Answer Sheet.png */,
+			);
+			path = "Maze pics";
+			sourceTree = "<group>";
+		};
 		4A06FCD0BB947E3330735A9F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,14 +345,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				117BF7572620FCC900854AAF /* LaunchScreen.storyboard in Resources */,
+				11F510762632BFDE00D0E4A3 /* login.png in Resources */,
+				11F510772632BFDE00D0E4A3 /* home.png in Resources */,
 				111C74AF262B12060092AFBE /* ApercuPro-Bold.ttf in Resources */,
+				11F5107C2632BFDE00D0E4A3 /* question page correct answer.png in Resources */,
 				117BF76C2622446000854AAF /* GoogleService-Info.plist in Resources */,
 				11400C922626FFA800A4FA23 /* ApercuPro-Regular.ttf in Resources */,
+				11F5107D2632BFDE00D0E4A3 /* Answer Sheet.png in Resources */,
 				117BF7542620FCC900854AAF /* Assets.xcassets in Resources */,
 				11C5D293262F897300A6756C /* ApercuPro-Light.ttf in Resources */,
 				117BF7522620FCC400854AAF /* Main.storyboard in Resources */,
 				11C5D28C262F82F200A6756C /* Alert.storyboard in Resources */,
 				11C5D296262F8BE600A6756C /* ApercuPro-Medium.ttf in Resources */,
+				11F5107A2632BFDE00D0E4A3 /* question page wrong answer.png in Resources */,
+				11F5107B2632BFDE00D0E4A3 /* history.png in Resources */,
+				11F510782632BFDE00D0E4A3 /* result dialog.png in Resources */,
+				11F510792632BFDE00D0E4A3 /* question page.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
