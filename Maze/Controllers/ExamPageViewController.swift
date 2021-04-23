@@ -46,9 +46,10 @@ class ExamPageViewController: UIPageViewController {
                 return
             }
             self.calculateScore()
+            let percent = (self.totalScore * 100 / self.questions.count )
             let examData: [String : Any] = [
                 "exam": question.examType as Any,
-                "score": "\((self.totalScore/self.questions.count) * 100)%",
+                "score": "\(percent)%",
                 "year": question.examYear as Any,
                 "subject": UserDefaultManager.shared.getSubject()!
             ]
