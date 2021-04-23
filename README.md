@@ -28,5 +28,5 @@ User is allowed to select one option at any time per question and selected opton
  - [Core Data](https://developer.apple.com/documentation/coredata)
  
  ## Credit
- - Tobi Dada (@TobiAlbert)
+ - Tobi Dada [@TobiAlbert](https://github.com/TobiAlbert)
 
