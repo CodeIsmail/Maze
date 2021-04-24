@@ -52,11 +52,13 @@ class ExamViewController: UIViewController {
     //MARK: Properties
     let currentQuestion: Question!
     let dataController: DataController!
+    let scrollAction: ()->Void
     
     //MARK: init
-    init(with question: Question, dataController: DataController){
+    init(with question: Question, dataController: DataController, scrollAction: @escaping ()-> Void){
         self.currentQuestion = question
         self.dataController = dataController
+        self.scrollAction = scrollAction
         super.init(nibName: nil, bundle: nil)
     }
     //MARK: init
@@ -145,6 +147,7 @@ class ExamViewController: UIViewController {
             }
             
         }
+        scrollAction()
     }
     
     private func setupViewsToParent() {
@@ -205,25 +208,25 @@ class ExamViewController: UIViewController {
         optionAButton.snp.makeConstraints { (make) in
             make.top.equalTo(questionLabel.snp.bottom).offset(24)
             make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(60)
+            make.height.equalTo(70)
         }
         
         optionBButton.snp.makeConstraints { (make) in
             make.top.equalTo(optionAButton.snp.bottom).offset(24)
             make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(60)
+            make.height.equalTo(70)
         }
         
         optionCButton.snp.makeConstraints { (make) in
             make.top.equalTo(optionBButton.snp.bottom).offset(24)
             make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(60)
+            make.height.equalTo(70)
         }
         
         optionDButton.snp.makeConstraints { (make) in
             make.top.equalTo(optionCButton.snp.bottom).offset(24)
             make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(60)
+            make.height.equalTo(70)
         }
         
     }

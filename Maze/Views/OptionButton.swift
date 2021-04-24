@@ -23,7 +23,7 @@ final class OptionButton: UIButton {
         let label = UILabel()
         label.textColor  = Helper.Color.black
         label.font = UIFont(name: "ApercuPro-Bold", size: 14)
-        label.textAlignment = .center
+        label.numberOfLines = 0
         return label
     }()
     private let optionBackgroundView: UIView = {
@@ -72,6 +72,7 @@ final class OptionButton: UIButton {
         optionAnswerLabel.snp.makeConstraints { (make) in
             make.leading.equalTo(optionBackgroundView.snp.trailing).offset(12)
             make.centerY.equalToSuperview()
+            make.trailing.lessThanOrEqualTo(selectedOptionImageView.snp.leading)
         }
         selectedOptionImageView.snp.makeConstraints { (make) in
             make.width.height.equalTo(30)

@@ -20,24 +20,47 @@ class ExamPageViewController: UIPageViewController {
     var hasPassed: Bool!
     var score: String!
     var totalScore: Int = 0
+    var goingForward = false
+    var pageIndex = 1
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(uploadScore))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(onBackTapped))
         setupFetchRequest()
         
         if let subject =  UserDefaultManager.shared.getSubject()  {
             title = subject
         }
         for question in questions {
-            let viewController = ExamViewController(with: question, dataController: dataController)
+            let viewController = ExamViewController(with: question, dataController: dataController) {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.9) {
+                    
+                    if (self.pageIndex <= (self.questionViewControllers.count - 1)) {
+                        let controller = self.questionViewControllers[self.pageIndex]
+                        self.setViewControllers([controller], direction: .forward, animated: true, completion: nil)
+                        self.pageIndex += 1
+                    }else{
+                        self.navigateTo()
+                    }
+                }
+            }
             questionViewControllers.append(viewController)
         }
         setupPageViewController()
         
         
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if isMovingFromParent {
+            showInfoOkOnlyAlert(message: "You can't exit ongoing exam until you finish or upload your current score")
+        }
+    }
+
     
     @objc private func uploadScore(){
         showInfoAlert(message: "Uploading your score now will terminate any ongoing exam. Are you sure you want to go ahead?"){
@@ -87,6 +110,9 @@ class ExamPageViewController: UIPageViewController {
         }
     }
     
+    @objc private func onBackTapped() {
+        showInfoOkOnlyAlert(message: "You can't exit ongoing exam until you finish or upload your current score")
+    }
 }
 
 extension ExamPageViewController : UIPageViewControllerDelegate{
@@ -123,7 +149,7 @@ extension ExamPageViewController : UIPageViewControllerDataSource{
         calculateScore()
         
         let alertViewController = AlertService().alert(score: score, hasPassed: hasPassed){ viewId in
-            
+            self.goingForward = true
             if viewId == 1{
                 let viewController = self.storyboard?.instantiateViewController(withIdentifier: "AnswerVC") as! AnswerViewController
                 viewController.dataController = self.dataController
@@ -137,6 +163,7 @@ extension ExamPageViewController : UIPageViewControllerDataSource{
             }
             
         }
+        goingForward = true
         present(alertViewController, animated: true)
         
     }

@@ -25,19 +25,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test yourself by taking an exam" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gku-ek-NCu">
-                                <rect key="frame" x="20" y="319" width="374" height="17"/>
+                                <rect key="frame" x="20" y="326" width="374" height="17"/>
                                 <fontDescription key="fontDescription" name="ApercuPro-Regular" family="Apercu Pro" pointSize="17"/>
                                 <color key="textColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maze" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jN-CK-cOb">
-                                <rect key="frame" x="20" y="265" width="374" height="40"/>
+                                <rect key="frame" x="20" y="265" width="374" height="47"/>
                                 <fontDescription key="fontDescription" name="ApercuPro-Medium" family="Apercu Pro" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghJ-dT-z2k" customClass="GIDSignInButton">
-                                <rect key="frame" x="87" y="442" width="240" height="35"/>
+                                <rect key="frame" x="87" y="449" width="240" height="35"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="ktv-Vx-YLh"/>
@@ -307,7 +307,7 @@
                                 <rect key="frame" x="20" y="76" width="374" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ANSWER SHEET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxM-Cp-Il3">
-                                        <rect key="frame" x="72.5" y="23.5" width="229" height="33"/>
+                                        <rect key="frame" x="60" y="21" width="254" height="38.5"/>
                                         <fontDescription key="fontDescription" name="ApercuPro-Regular" family="Apercu Pro" pointSize="33"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

@@ -53,7 +53,7 @@ class SelectExamViewController: UIViewController {
             
             guard error == nil else {
                 
-                //TODO: Display a error dialog
+                self.showErrorAlert(message: error?.localizedDescription ?? "Something went wrong!")
                 return
             }
             
@@ -139,7 +139,7 @@ class SelectExamViewController: UIViewController {
         let viewController = ControllerHelper.getExamPageViewController()
         viewController.dataController = dataController
         viewController.firestoreDb = firestoreDb
-        
+        viewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(viewController, animated: true)
     }
     

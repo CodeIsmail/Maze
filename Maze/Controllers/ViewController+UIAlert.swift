@@ -16,12 +16,18 @@ extension UIViewController{
         present(alertView, animated: true)
     }
     
-    func showInfoAlert(message: String, completion: @escaping ()-> Void){
+    func showInfoAlert(message: String, completion: (()-> Void)?){
         let alertView = UIAlertController(title: "Info", message: message, preferredStyle: .alert)
         alertView.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (alertAction) in
-            completion()
+            completion?()
         }))
         alertView.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        present(alertView, animated: true)
+    }
+    
+    func showInfoOkOnlyAlert(message: String){
+        let alertView = UIAlertController(title: "Info", message: message, preferredStyle: .alert)
+        alertView.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         present(alertView, animated: true)
     }
 }
