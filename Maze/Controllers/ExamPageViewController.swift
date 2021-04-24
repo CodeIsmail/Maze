@@ -54,14 +54,6 @@ class ExamPageViewController: UIPageViewController {
         
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if isMovingFromParent {
-            showInfoOkOnlyAlert(message: "You can't exit ongoing exam until you finish or upload your current score")
-        }
-    }
-
-    
     @objc private func uploadScore(){
         showInfoAlert(message: "Uploading your score now will terminate any ongoing exam. Are you sure you want to go ahead?"){
             
