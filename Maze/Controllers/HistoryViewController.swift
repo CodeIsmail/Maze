@@ -51,7 +51,7 @@ class HistoryViewController: UIViewController {
             
             let loginViewController = ControllerHelper.getLoginViewController()
             
-            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(loginViewController)
+            ControllerHelper.changeRootViewController(loginViewController, window: window)
         } catch let signOutError as NSError {
             showErrorAlert(message: "Error Signing out")
             print ("Error signing out: %@", signOutError)

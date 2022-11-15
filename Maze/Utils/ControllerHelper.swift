@@ -23,4 +23,19 @@ class ControllerHelper{
     static func getTabBarRootViewController()-> RootViewController{
         return storyboard.instantiateViewController(identifier: "TabVC") as! RootViewController
     }
+    
+    static func changeRootViewController(_ vc: UIViewController, window: UIWindow?, animated: Bool = true) {
+        guard let window = window else {
+            return
+        }
+        
+        window.rootViewController = vc
+        
+        // add animation
+        UIView.transition(with: window,
+                          duration: 0.5,
+                          options: [.transitionFlipFromLeft],
+                          animations: nil,
+                          completion: nil)
+    }
 }

@@ -36,3 +36,11 @@ extension UIColor {
         return nil
     }
 }
+
+
+//MARK: Access Controller Window
+extension UIViewController{
+    var window: UIWindow? {
+        return UIApplication.shared.windows.first
+    }
+}
