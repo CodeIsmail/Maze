@@ -14,7 +14,7 @@ class ApiClient{
     }
     enum Endpoint {
         
-        static let BaseUrl = "https://questions.aloc.ng/api/q/20?"
+        static let BaseUrl = "https://questions.aloc.com.ng/api/v2/q/20?"
         
         case requestExamQuestion(String, String, String)
         
@@ -26,8 +26,11 @@ class ApiClient{
             }
         }
         
-        var url: URL{
-            return URL(string: stringValue)!
+        var url: URLRequest{
+            var request = URLRequest(url: URL(string: stringValue)!)
+            
+            request.addValue(ALOC_API_KEY, forHTTPHeaderField: "AccessToken")
+            return request
         }
     }
     
